@@ -37,11 +37,11 @@ def loop():
     print(redd + "≠≠≠≠≠≠≠≠≠≠≠≠CHOOSE A CREDIT CARD NETWORK TO GENERATE≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠" + white)
     print(green + """
     [1]Visa
-    [2]Mastercard(Unavailable)
+    [2]Mastercard
     [3]American Express(Unavailable)
     """ + white)
     print(red + "===================================================" + white)
-    print(green + "[00]Update Script" + white)
+    print(green + """[00]Update Script  [J]Join my WhatsApp group""" + white)
     print(red + "===================================================" + white)
     cc = input(yellow + "$ " + white)
     if cc == "1":
@@ -111,8 +111,11 @@ def loop():
         check = str(checkSum)
         #Joining all cc number together
         ccnumber = ran1 + ran2 + ran3 + ran4 + ran5 + ran6 + za + za1 + za2 + za3 + za4 + za5 + za6 + za7 + za8 + check
+        global cvv
         cvv = random.randrange(354, 958)
+        global mm
         mm = random.randrange(1, 12)
+        global yy
         yy = random.randrange(22, 25)
         print(yellow + """
        §§§§§§§§§§§§§§§§§§§Card Details§§§§§§§§§§§§§§§§§§§
@@ -129,12 +132,12 @@ def loop():
         bin6 = random.randrange (1, 6)
         #Account Number for MasterCard
         acc1 = random.randrange(1, 9)
-        acc2 = random.randrange(2, 9)
-        acc3 = random.randrange(3, 9)
-        acc4 = random.randrange(4, 9)
-        acc5 = random.randrange(5, 9)
-        acc6 = random.randrange(6, 9)
-        acc7 = random.randrange(7, 9)
+        acc2 = random.randrange(2, 4)
+        acc3 = random.randrange(3, 6)
+        acc4 = random.randrange(4, 8)
+        acc5 = random.randrange(2, 9)
+        acc6 = random.randrange(4, 9)
+        acc7 = random.randrange(6, 9)
         acc8 = random.randrange(3, 7)
         acc9 = random.randrange(2, 6)
         #Doubling all even positions
@@ -147,9 +150,50 @@ def loop():
         gg = ((acc7 * 2)%9)
         hh = ((acc9 * 2)%9)
         #sum digit
-        print(red + "Not available at the moment!" + white)
-        t.sleep(3)
-        loop()
+        RAND1 = aa
+        RAND2 = bin2
+        RAND3 = bb
+        RAND4 = bin4
+        RAND5 = cc
+        RAND6 = bin6
+        RAND7 = dd
+        RAND8 = acc2
+        RAND9 = ee
+        RAND10 = acc4
+        RAND11 = ff
+        RAND12 = acc6
+        RAND13 = gg
+        RAND14 = acc8
+        RAND15 = hh
+        #add sum digit to check digit
+        acc = RAND1 + RAND2 + RAND3 + RAND4 + RAND5 + RAND6 + RAND7 + RAND8 + RAND9 + RAND10 + RAND11 + RAND12 + RAND13 + RAND14 + RAND15
+        CheckSum = ((acc * 9)% 10)
+        #Converting data to stringtype
+        RAND1 = str(bin1)
+        RAND2 = str(bin2)
+        RAND3 = str(bin3)
+        RAND4 = str(bin4)
+        RAND5 = str(bin5)
+        RAND6 = str(bin6)
+        RAND7 = str(acc1)
+        RAND8 = str(acc2)
+        RAND9 = str(acc3)
+        RAND10 = str(acc4)
+        RAND11 = str(acc5)
+        RAND12 = str(acc6)
+        RAND13 = str(acc7)
+        RAND14 = str(acc8)
+        RAND15 = str(acc9)
+        CheckSum = str(CheckSum)
+        #Joining all cc numbers together
+        ccnumber = RAND1 + RAND2 + RAND3 + RAND4 + RAND5 + RAND6 + RAND7 + RAND8 + RAND9 + RAND10 + RAND11 + RAND12 + RAND13 + RAND14 + RAND15 + CheckSum
+        cvv = random.randrange(316, 790)
+        yy = random.randrange(23, 30)
+        mm = random.randrange(1, 12)
+        dd = random.randrange(1, 31) 
+        print(green + "Generating card info...")
+        t.sleep(4)
+        print(yellow + "$$$$$$$$$$$$$$$$$$$$$$$$$$$$CARD DETAILS$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\nCard Number: ", ccnumber, "\nCVV: ", cvv, "\nExpiry Date: DD", dd, "MM: ", mm, "YY: ", yy, white)
     elif cc == "00":
         os.system("clear")
         print(redd + "Updating Script" + white)
@@ -171,15 +215,16 @@ def loop():
         print(red + "Not available at the moment!" + white)
         t.sleep(3)
         loop()
+    elif cc == "J" or cc == "j":
+        os.system("xdg-open https://chat.whatsapp.com/BivW6pA9Emu9bDM2rZkaQy")
+        exit()
     else:
         print (red + " invalid option" + white)
         t.sleep(3)
         loop()
-        
-       
+    cont = input (redd + "Do you wanna continue?[y/n]? " + white)
+    if cont == "y" or cont == "Y":
+        loop()
+    else:
+        exit()
 loop()
-cont = input (redd + "Do you wanna continue?[y/n]? " + white)
-if cont == "y" or cont == "Y":
-    loop()
-else:
-    exit()
