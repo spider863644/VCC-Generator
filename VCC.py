@@ -1,14 +1,20 @@
 import random
-import os
+try:
+	import colorama
+except:
+	import os
+	os.system("pip install colorama")
+from colorama import *
+import os                                             
 import time as t
 os.system("apt install figlet")
 os.system("clear")
-print("\033[5;31;4mDisclaimer: Use this script only for educational purposes only and testing purposes\nWe won't be held for any fucken shit\n\nYou can't use this card for carting")
-t.sleep(6)
+print(Fore.RED + "Disclaimer: Use this script only for educational purposes only and testing purposes\nWe won't be held for any fucken shit\n\nYou can't use this card for carting")
+t.sleep(4.5)
 os.system("clear")
 print("""\033[0;32;40mContributors:
-Spider Anongreyhat
-AnonyminHack5""")
+	Spider Anongreyhat
+	AnonyminHack5""")
 t.sleep(4)
 os.system("clear")
 def loop():
@@ -49,8 +55,8 @@ def loop():
         t.sleep(5)
         #Credit Card Random Bin for Visa
         rand1 = 4
-        rand2 = random.randrange(1, 8) 
-        rand3 = random.randrange(2, 8) 
+        rand2 = random.randrange(1, 8)
+        rand3 = random.randrange(2, 8)
         rand4 = random.randrange(3, 8)
         rand5 = random.randrange(0, 8)
         rand6 = random.randrange (1, 8)
@@ -65,13 +71,13 @@ def loop():
         acc8 = random.randrange(3, 7)
         acc9 = random.randrange(4, 6)
        #Doubling Even position
-        aa = ((rand1 * 2)%9) 
+        aa = ((rand1 * 2)%9)
         bb = ((rand3 * 2)%9)
         cc = ((rand5 *2)%9)
-        a = ((acc1 * 2 )% 9) 
-        b = ((acc3 * 2 )% 9) 
-        c = ((acc5 * 2) % 9) 
-        d = ((acc7 * 2) % 9) 
+        a = ((acc1 * 2 )% 9)
+        b = ((acc3 * 2 )% 9)
+        c = ((acc5 * 2) % 9)
+        d = ((acc7 * 2) % 9)
         e = ((acc9 * 2)% 9)
        #Sum digits
         Rand1 = aa
@@ -95,9 +101,9 @@ def loop():
         #Converting all Data to string
         ran1 = str(rand1)
         ran2 = str(rand2)
-        ran3 = str(rand3) 
-        ran4 = str(rand4) 
-        ran5 = str(rand5) 
+        ran3 = str(rand3)
+        ran4 = str(rand4)
+        ran5 = str(rand5)
         ran6 = str(rand6)
         za = str(acc1)
         za1 = str(acc2)
@@ -125,9 +131,9 @@ def loop():
     elif cc == "2":
         #Credit Card bin for MasterCard
         bin1 = 5
-        bin2 = random.randrange (0, 5) 
+        bin2 = random.randrange (0, 5)
         bin3 = random.randrange(1, 8)
-        bin4 = random.randrange (3, 7) 
+        bin4 = random.randrange (3, 7)
         bin5 = random.randrange(0, 4)
         bin6 = random.randrange (1, 6)
         #Account Number for MasterCard
@@ -190,7 +196,7 @@ def loop():
         cvv = random.randrange(316, 790)
         yy = random.randrange(23, 30)
         mm = random.randrange(1, 12)
-        dd = random.randrange(1, 31) 
+        dd = random.randrange(1, 31)
         print(green + "Generating card info...")
         t.sleep(4)
         print(yellow + "$$$$$$$$$$$$$$$$$$$$$$$$$$$$CARD DETAILS$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\nCard Number: ", ccnumber, "\nCVV: ", cvv, "\nExpiry Date: DD", dd, "MM: ", mm, "YY: ", yy, white)
@@ -210,7 +216,7 @@ def loop():
         python3 VCC.py
         """ + white)
         exit()
-        
+
     elif cc == "3":
         print(red + "Not available at the moment!" + white)
         t.sleep(3)
@@ -227,4 +233,3 @@ def loop():
         loop()
     else:
         exit()
-loop()
