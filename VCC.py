@@ -233,3 +233,4 @@ def loop():
         loop()
     else:
         exit()
+loop()
